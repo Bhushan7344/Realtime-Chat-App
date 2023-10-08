@@ -68,7 +68,7 @@ const Login = () => {
           name="email"
           value={email}
           size="md"
-          placeholder="eg. John.Doe@outlook.com"
+          placeholder="eg. xxx@gmail.com"
         />
       </FormControl>
       <FormControl id="loginPassword" isRequired>
@@ -87,7 +87,7 @@ const Login = () => {
               h="1.75rem"
               size="xs"
               onClick={handleClick}
-              isDisabled={email === "guest@deLink.com"}
+              isDisabled={email === "guest@gmail.com"}
             >
               {show ? "Hide" : "Show"}
             </Button>

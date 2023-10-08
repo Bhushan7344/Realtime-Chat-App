@@ -38,7 +38,7 @@ const Homepage = () => {
       }}
     >
       <Container
-        maxW={isLargerThan768 ? "xl" : "sm"} // Adjusted container size for mobile
+        maxW={isLargerThan768 ? "xl" : "sm"}
         centerContent
       >
         <Box
@@ -47,7 +47,7 @@ const Homepage = () => {
           boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
           border="1px solid rgba(0, 0, 0, 0.2)"
           borderRadius="10px"
-          minW={isLargerThan768 ? "550px" : "100%"} // Adjusted width for mobile
+          minW={isLargerThan768 ? "550px" : "100%"}
           p="3"
           backdropFilter="blur(10px)"
         >

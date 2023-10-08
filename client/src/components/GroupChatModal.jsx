@@ -65,13 +65,13 @@ const GroupChatModal = ({ children }) => {
     setSelectedUser(selectedUser.filter((sel) => sel._id !== user._id));
   };
   const handleSubmit = async () => {
-    if (user.user.email === "guest@deLink.com") {
+    if (user.user.email === "guest@gmail.com") {
       toast.info("Guest cannot create groups");
       return;
     }
     if (
       selectedUser.map((u) => {
-        if (u.email === "guest@deLink.com") {
+        if (u.email === "guest@gmail.com") {
           toast.info("Guest user can not be added in group");
         }
         return {};
