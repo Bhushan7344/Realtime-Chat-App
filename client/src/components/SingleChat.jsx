@@ -18,7 +18,7 @@ import axios from "axios";
 import ScrollableChat from "./ScrollableChat";
 // for socket.io
 import io from "socket.io-client";
-const ENDPOINT ="http://localhost:8000";
+const ENDPOINT ="https://chat-app-ygvw.onrender.com";
 var socket; 
 var selectedChatCompare;
 

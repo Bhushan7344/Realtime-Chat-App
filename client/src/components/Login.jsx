@@ -104,23 +104,7 @@ const Login = () => {
       >
         Login
       </Button>
-      <Button
-        variant="outline"
-        bg={"#1d1931"}
-        colorScheme={"#1d1931"}
-        color="#fff"
-        width="100%"
-        style={{ marginTop: "10px" }}
-        onClick={() => {
-          setUserData({
-            email: "guest@gmail.com",
-            password: "thisISTHE1234PAssGU3st",
-          });
-        }}
-        isLoading={loading}
-      >
-        Guest login
-      </Button>
+      
     </VStack>
   );
 };
