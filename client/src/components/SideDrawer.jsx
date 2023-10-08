@@ -60,7 +60,7 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`/api/users?search=${search}`, config);
+      const { data } = await axios.get(`https://chat-app-ygvw.onrender.com/api/users?search=${search}`, config);
       setSearchResult(data.users);
       setLoading(false);
     } catch (err) {
@@ -79,7 +79,7 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`/api/chats`, { userId }, config);
+      const { data } = await axios.post(`https://chat-app-ygvw.onrender.com/api/chats`, { userId }, config);
       if (!chats.find((item) => item._id === data._id))
         setChats([data, ...chats]);
 
@@ -100,7 +100,7 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      await axios.delete(`/api/notification/${id}`, config);
+      await axios.delete(`https://chat-app-ygvw.onrender.com/api/notification/${id}`, config);
     } catch (err) {
       toast.error(err);
     }
@@ -112,7 +112,7 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get("/api/notification", config);
+      const { data } = await axios.get("https://chat-app-ygvw.onrender.com/api/notification", config);
       setNotification(data.map((item) => item.notificationId));
     } catch (err) {
       toast.error(err);

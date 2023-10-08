@@ -77,7 +77,7 @@ const Register = () => {
       };
       console.log(name, email, password, pic);
       const { data } = await axios.post(
-        "/api/users",
+        "https://chat-app-ygvw.onrender.com/api/users",
         { name, email, password, pic },
         config
       );

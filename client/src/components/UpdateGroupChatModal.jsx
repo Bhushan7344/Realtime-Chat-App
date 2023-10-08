@@ -54,7 +54,7 @@ const UpdateGroupChatModal = ({
         },
       };
       const { data } = await axios.put(
-        `/api/chats/groupremove`,
+        `https://chat-app-ygvw.onrender.com/api/chats/groupremove`,
         {
           userId: userToBeRemoved._id,
           chatId: selectedChat._id,
@@ -86,7 +86,7 @@ const UpdateGroupChatModal = ({
         },
       };
       const { data } = await axios.put(
-        "/api/chats/grouprename",
+        "https://chat-app-ygvw.onrender.com/api/chats/grouprename",
         { chatName: groupChatName, chatId: selectedChat._id },
         config
       );
@@ -114,7 +114,7 @@ const UpdateGroupChatModal = ({
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`/api/users?search=${search}`, config);
+      const { data } = await axios.get(`https://chat-app-ygvw.onrender.com/api/users?search=${search}`, config);
       setSearchResult(data.users);
       setLoading(false);
     } catch (err) {
@@ -123,7 +123,7 @@ const UpdateGroupChatModal = ({
     }
   };
   const handleAddMember = async (userToAdd) => {
-    if (userToAdd.email === "guest@deLink.com") {
+    if (userToAdd.email === "guest@gmail.com") {
       toast.info("\nGuest user can not be a part of group");
       return;
     }
@@ -143,7 +143,7 @@ const UpdateGroupChatModal = ({
         },
       };
       const { data } = await axios.put(
-        `/api/chats/groupadd`,
+        `https://chat-app-ygvw.onrender.com/api/chats/groupadd`,
         {
           userId: userToAdd._id,
           chatId: selectedChat._id,
@@ -167,7 +167,7 @@ const UpdateGroupChatModal = ({
         },
       };
       await axios.put(
-        `/api/chats/groupremove`,
+        `https://chat-app-ygvw.onrender.com/api/chats/groupremove`,
         {
           userId: userToBeRemoved.user._id,
           chatId: selectedChat._id,

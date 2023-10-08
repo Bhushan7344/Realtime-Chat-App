@@ -1,10 +1,9 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "https://chat-app-ygvw.onrender.com",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^1.8.8",
+    "@chakra-ui/react": "^1.8.9",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@testing-library/jest-dom": "^5.16.4",

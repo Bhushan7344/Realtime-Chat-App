@@ -19,7 +19,7 @@ const MyChats = ({ fetchAgain }) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`/api/chats`, config);
+      const { data } = await axios.get(`https://chat-app-ygvw.onrender.com/api/chats`, config);
       setChats(data);
     } catch (err) {
       toast.error(err);
