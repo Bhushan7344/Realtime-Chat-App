@@ -19,6 +19,7 @@ import {
   DrawerHeader,
   DrawerBody,
   Input,
+  Badge, // Import Badge from Chakra UI
 } from "@chakra-ui/react";
 import { IoSearch, IoNotificationsSharp, IoCaretDown } from "react-icons/io5";
 import { ChatState } from "../context/ChatProvider.js";
@@ -26,7 +27,6 @@ import { useNavigate } from "react-router-dom";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { toast } from "react-toastify";
 import axios from "axios";
-import NotificationBadge, { Effect } from "react-notification-badge";
 
 const SideDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -60,7 +60,10 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`https://chat-app-ygvw.onrender.com/api/users?search=${search}`, config);
+      const { data } = await axios.get(
+        `https://chat-app-ygvw.onrender.com/api/users?search=${search}`,
+        config
+      );
       setSearchResult(data.users);
       setLoading(false);
     } catch (err) {
@@ -79,7 +82,11 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`https://chat-app-ygvw.onrender.com/api/chats`, { userId }, config);
+      const { data } = await axios.post(
+        `https://chat-app-ygvw.onrender.com/api/chats`,
+        { userId },
+        config
+      );
       if (!chats.find((item) => item._id === data._id))
         setChats([data, ...chats]);
 
@@ -100,7 +107,10 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      await axios.delete(`https://chat-app-ygvw.onrender.com/api/notification/${id}`, config);
+      await axios.delete(
+        `https://chat-app-ygvw.onrender.com/api/notification/${id}`,
+        config
+      );
     } catch (err) {
       toast.error(err);
     }
@@ -112,7 +122,10 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get("https://chat-app-ygvw.onrender.com/api/notification", config);
+      const { data } = await axios.get(
+        "https://chat-app-ygvw.onrender.com/api/notification",
+        config
+      );
       setNotification(data.map((item) => item.notificationId));
     } catch (err) {
       toast.error(err);
@@ -151,10 +164,9 @@ const SideDrawer = () => {
         <div style={{ display: "flex" }}>
           <Menu>
             <MenuButton p={2} fontSize="2xl" textAlign="center">
-              <NotificationBadge
-                count={notification.length}
-                effect={Effect.SCALE}
-              />
+              <Badge colorScheme="red" variant="subtle">
+                {notification.length}
+              </Badge>
               <IoNotificationsSharp color="rgba(255, 255, 255, 0.685)" />
             </MenuButton>
             <MenuList p="2" cursor="pointer">
