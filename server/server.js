@@ -22,7 +22,7 @@ app.use("/api/notification", notificationRoutes);
 
   app.get("/", (req, res) => {
     res.status(200).json({
-      message: "Hello from DE-Link Chat App server",
+      message: "Hello World",
     });
   });
 
@@ -32,10 +32,7 @@ app.use(routeNotFound);
 app.use(errorHandler);
 
 const server = app.listen(process.env.PORT || 5000, () => {
-  console.log(
-    colors.brightMagenta(`\nServer is UP on PORT ${process.env.SERVER_PORT}`)
-  );
-  console.log(`Visit  ` + colors.underline.blue(`localhost:${5000}`));
+  console.log(`Server running on port: ${process.env.PORT}`);
 });
 
 const io = require("socket.io")(server, {
