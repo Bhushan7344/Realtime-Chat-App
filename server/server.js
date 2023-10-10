@@ -38,7 +38,7 @@ const server = app.listen(process.env.PORT || 5000, () => {
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "*",
+    origin: "https://realtime-chat-app-kappa-ten.vercel.app/",
   },
 });
 
